@@ -1,33 +1,48 @@
-name: Deploy to GitHub Pages
+name: Deploy React App to GitHub Pages
 
 on:
   push:
     branches:
-      - main   # نشر كل ما تعمل push على main
+      - main   # كل ما تعمل push على main يتم النشر تلقائيًا
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      # 1️⃣ سحب الكود
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
+      # 2️⃣ إعداد Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
 
+      # 3️⃣ تثبيت الاعتمادات
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      # 4️⃣ بناء المشروع
       - name: Build project
         run: npm run build
 
+      # 5️⃣ التحقق من مجلد البناء
+      - name: List build folder
+        run: ls -la ./build
+
+      # 6️⃣ نشر على GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./dist   # غيّرها لو مشروعك بيبني في build مش dist
+          publish_dir: ./build
