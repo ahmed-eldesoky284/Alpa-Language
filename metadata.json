@@ -1,0 +1,7 @@
+{
+  "name": "Alpa Language Terminal",
+  "description": "A web-based terminal simulator for the Alpa programming language, a bilingual, AI-native language for modern development.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
