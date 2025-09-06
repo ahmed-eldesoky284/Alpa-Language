@@ -231,6 +231,33 @@ Text to analyze: "${contentToAnalyze}"`;
         return { output: `[AI]: Summary for ${url}\n\n${summary}` };
     }
 
+    case 'RUN': {
+      const filePath = args[0];
+      if (!filePath) {
+        return { output: `Error: A path to an .alpa file is required.\n\nUsage: ${def.usage}` };
+      }
+
+      try {
+        // Attempt to fetch the file relative to the site (works in browser / deployed site)
+        const response = await fetch(filePath, { method: 'GET' });
+        if (!response.ok) {
+          return { output: `Error: Could not fetch file '${filePath}' (status ${response.status}).` };
+        }
+        const text = await response.text();
+        // Extract print(...) statements
+        const printRe = /print\s*\(\s*("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')\s*\)/g;
+        const outputs: string[] = [];
+        let m;
+        while ((m = printRe.exec(text)) !== null) {
+          outputs.push(m[1].slice(1, -1));
+        }
+        if (outputs.length === 0) return { output: '[Alpa RUN] No print statements found in file.' };
+        return { output: outputs.join('\n') };
+      } catch (e) {
+        return { output: `Error: Failed to run file: ${(e as Error).message}` };
+      }
+    }
+
     case 'DEPLOY_GHPAGES': {
         const steps = [
             { delay: 500, message: '[BUILD]: Building Alpa static website...' },

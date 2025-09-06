@@ -123,4 +123,9 @@ export const COMMAND_MAP: { [key: string]: CommandDef } = {
     description: 'Deploys the Alpa project to Vercel.',
     usage: 'deploy.vercel',
   },
+  RUN: {
+    aliases: ['run'],
+    description: 'Runs an Alpa file and prints outputs from print(...) calls.',
+    usage: 'run <file.alpa>'
+  },
 };
