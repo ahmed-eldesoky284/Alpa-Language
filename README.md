@@ -5,16 +5,18 @@
 
 
 
-[Alpa Language website ](https://ahmed-eldesoky284.github.io/Alpa-Language/).  
 # Alpa Language
 
 **Alpa** is a new programming language designed to provide a simple and interactive environment for developers, whether beginners or professionals.  
 **Alpa** هي لغة برمجة جديدة تهدف إلى تقديم بيئة تطوير مبسطة وتفاعلية للمبرمجين، سواء كانوا مبتدئين أو محترفين.  
 
 The project is open-source and available on [GitHub](https://github.com/ahmed-eldesoky284/Alpa-Language).  
-[ website ](https://ahmed-eldesoky284.github.io/Alpa-Language/).  
-المشروع مفتوح المصدر ومتوفر على [GitHub](https://github.com/ahmed-eldesoky284/Alpa-Language). 
-[ website ](https://ahmed-eldesoky284.github.io/Alpa-Language/).  
+official website : [ website ](https://ahmed-eldesoky284.github.io/Alpa-Language/).  
+
+المشروع مفتوح المصدر ومتوفر على [GitHub](https://github.com/ahmed-eldesoky284/Alpa-Language).
+ 
+الموقع الرسمي : [ الموقع ](https://ahmed-eldesoky284.github.io/Alpa-Language/). 
+ 
 
 ---
 
