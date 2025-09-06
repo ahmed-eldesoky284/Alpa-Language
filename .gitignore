@@ -18,6 +18,10 @@ Thumbs.db
 
 # Installers (do not commit large binaries)
 installers/
+# but allow small helper scripts and README
+!installers/*.sh
+!installers/*.bat
+!installers/README.md
 
 # VS Code extension packaging
 *.vsix

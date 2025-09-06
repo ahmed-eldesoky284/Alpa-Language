@@ -1,8 +1,9 @@
 {
   "name": "vscode-alpa",
   "displayName": "Alpa Language",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "AlpaLanguage",
+  "description": "Alpa language support for VS Code — syntax highlighting, CodeLens run buttons and basic tooling integration.",
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
@@ -33,6 +34,20 @@
         "language": "alpa",
         "scopeName": "source.alpa",
         "path": "./syntaxes/alpa.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Alpa Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/alpa-color-theme.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "alpa-file-icons",
+        "label": "Alpa File Icons",
+        "path": "./fileicons/alpa-file-icons.json"
       }
     ],
     "commands": [
@@ -71,7 +86,26 @@
     "onLanguage:alpa"
   ],
   "main": "./extension.js",
+  "semanticTokenTypes": [
+    {
+      "id": "keyword",
+      "superType": "keyword"
+    },
+    {
+      "id": "string",
+      "superType": "string"
+    },
+    {
+      "id": "number",
+      "superType": "number"
+    },
+    {
+      "id": "variable",
+      "superType": "variable"
+    }
+  ],
   "scripts": {
-    "prepare": "echo 'No build step required for this simple extension'"
+    "prepare": "echo 'No build step required for this simple extension'",
+    "package": "vsce package --out vscode-alpa-${npm_package_version}.vsix"
   }
 }
