@@ -1,7 +1,13 @@
 {
   "name": "vscode-alpa",
   "displayName": "Alpa Language",
-  "publisher": "ahmedeldesoky",
+  "version": "0.0.2",
+  "publisher": "AlpaLanguage",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmedeldesoky284/Alpa-Language.git"
+  },
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -12,8 +18,13 @@
     "languages": [
       {
         "id": "alpa",
-        "aliases": ["Alpa", "alpa"],
-        "extensions": [".alpa"],
+        "aliases": [
+          "Alpa",
+          "alpa"
+        ],
+        "extensions": [
+          ".alpa"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -23,15 +34,32 @@
         "scopeName": "source.alpa",
         "path": "./syntaxes/alpa.tmLanguage.json"
       }
+    ],
+    "commands": [
+      {
+        "command": "alpa.sayHello",
+        "title": "Alpa: Say Hello",
+        "category": "Alpa"
+      },
+      {
+        "command": "alpa.insertSnippet",
+        "title": "Alpa: Insert Example Snippet",
+        "category": "Alpa"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "alpa.insertSnippet",
+        "key": "ctrl+alt+i",
+        "when": "editorTextFocus && editorLangId == alpa"
+      }
     ]
   },
-  "activationEvents": ["onLanguage:alpa"],
+  "activationEvents": [
+    "onLanguage:alpa"
+  ],
   "main": "./extension.js",
   "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile"
-  },
-  "devDependencies": {
-    "vscode": "^1.1.58"
+    "prepare": "echo 'No build step required for this simple extension'"
   }
 }

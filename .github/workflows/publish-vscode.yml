@@ -1,0 +1,32 @@
+name: Publish VS Code Extension
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+        working-directory: ./vscode-alpa
+
+      - name: Verify package (create .vsix)
+        working-directory: ./vscode-alpa
+        run: npx @vscode/vsce package
+
+      - name: Publish extension
+        working-directory: ./vscode-alpa
+        run: npx @vscode/vsce publish --pat "$VSCE_TOKEN"

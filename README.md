@@ -42,9 +42,17 @@ The application includes download buttons for Windows, macOS, and Linux. For the
 
 3.  **Upload Assets:** 
     *   When creating the release, upload your compiled application files. **The file names must match** the ones in the `config.ts` URLs:
-        *   `alpa-installer.exe`
-        *   `alpa-installer.dmg`
-        *   `alpa-installer.deb`
+    *   `alpa-installer.exe`
+    *   `alpa-installer.dmg`
+    *   `alpa-installer.deb`
     *   Publish the release.
+
+Alternatively, for quick testing or to include installers directly in the repository, this repo now includes placeholder installer files under `installers/`:
+
+* `installers/alpa-installer.exe`
+* `installers/alpa-installer.dmg`
+* `installers/alpa-installer.deb`
+
+Replace these placeholders with your real binaries before publishing or deploying the site.
 
 Now, the download buttons on your live website will point directly to these files.
