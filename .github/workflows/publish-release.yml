@@ -32,8 +32,10 @@ jobs:
       - name: Create release (if not exists) and upload assets
         uses: softprops/action-gh-release@v1
         with:
+          # Upload generated VSIX, any prepared release-artifacts, and files from installers/
           files: |
             vscode-alpa/*.vsix
             release-artifacts/*
+            installers/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
