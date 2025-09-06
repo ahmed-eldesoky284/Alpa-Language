@@ -1,0 +1,37 @@
+{
+  "name": "vscode-alpa",
+  "displayName": "Alpa Language",
+  "publisher": "ahmedeldesoky",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "alpa",
+        "aliases": ["Alpa", "alpa"],
+        "extensions": [".alpa"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "alpa",
+        "scopeName": "source.alpa",
+        "path": "./syntaxes/alpa.tmLanguage.json"
+      }
+    ]
+  },
+  "activationEvents": ["onLanguage:alpa"],
+  "main": "./extension.js",
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile"
+  },
+  "devDependencies": {
+    "vscode": "^1.1.58"
+  }
+}

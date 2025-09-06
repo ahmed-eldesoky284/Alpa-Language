@@ -1,0 +1,9 @@
+{
+  "scopeName": "source.alpa",
+  "patterns": [
+    { "match": "\\b(if|else|for|while|return)\\b", "name": "keyword.control.alpa" },
+    { "match": "\\b([0-9]+)\\b", "name": "constant.numeric.alpa" },
+    { "begin": "\"", "end": "\"", "name": "string.quoted.double.alpa" }
+  ],
+  "repository": {}
+}
