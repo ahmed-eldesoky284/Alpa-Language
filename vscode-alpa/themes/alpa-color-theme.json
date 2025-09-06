@@ -1,0 +1,52 @@
+{
+    "name": "Alpa Theme",
+    "type": "dark",
+    "colors": {},
+    "tokenColors": [
+        {
+            "scope": "keyword.control.alpa",
+            "settings": {
+                "foreground": "#FFB86C",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "string.quoted.double.alpa,string.quoted.single.alpa",
+            "settings": {
+                "foreground": "#98C379"
+            }
+        },
+        {
+            "scope": "constant.numeric.alpa,constant.numeric.hex.alpa",
+            "settings": {
+                "foreground": "#FF79C6"
+            }
+        },
+        {
+            "scope": "entity.name.function.alpa",
+            "settings": {
+                "foreground": "#61AFEF",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "variable.other.alpa",
+            "settings": {
+                "foreground": "#E06C75"
+            }
+        },
+        {
+            "scope": "comment.line.double-slash.alpa,comment.block.alpa",
+            "settings": {
+                "foreground": "#6A737D",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "support.function.print.alpa",
+            "settings": {
+                "foreground": "#C678DD"
+            }
+        }
+    ]
+}

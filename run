@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Simple runner wrapper for Alpa files. Usage: ./run path/to/file.alpa
+ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
+RUNNER="$ROOT_DIR/tools/run-alpa.cjs"
+
+if [ ! -f "$RUNNER" ]; then
+  echo "Runner not found: $RUNNER"
+  exit 2
+fi
+
+if [ "$#" -eq 0 ]; then
+  FILE="$ROOT_DIR/example.alpa"
+else
+  FILE="$1"
+fi
+
+if [ ! -f "$FILE" ]; then
+  echo "Alpa file not found: $FILE"
+  exit 2
+fi
+
+node "$RUNNER" "$FILE"

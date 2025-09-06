@@ -1,0 +1,87 @@
+Alpa commands run against: /Users/ahmedeldesoky/Downloads/alpa-language-terminal/test.alpa
+Date: 2025-09-06T03:21:44.199Z
+
+--- help
+Usage: help
+Output: Lists available commands (see file)
+
+--- clear
+[Simulated] Screen cleared
+
+--- exit
+[Simulated] Exiting terminal
+
+--- ai.chat
+[Simulated] Starting chat session... (interactive)
+
+--- image "alpa language icon"
+[Simulated] Generated image for prompt: alpa language icon
+
+--- camera.open
+[Simulated] Camera opened
+
+--- camera.describe "show file"
+[Simulated] Capturing frame and describing: file view
+
+--- camera.close
+[Simulated] Camera closed
+
+--- detect.objects both
+[Simulated] Detected: people=0, objects=0
+
+--- detect.faces on
+[Simulated] Face detection enabled
+
+--- bot.new web test.alpa
+[Simulated] Building bot for platform web using data source: /Users/ahmedeldesoky/Downloads/alpa-language-terminal/test.alpa
+[Simulated] Bot endpoint: https://bot.alpa.cloud/web/qmykmi5
+
+--- ai.stt test_output.aiff
+[Simulated] Transcription: "Hello, this is a simulated transcription from Alpa STT."
+
+--- ai.tts (text from prints)
+[Simulated] TTS text:
+Top-level print before main
+Hello, Alpa!
+Single quoted string
+Escaped "quote" inside
+Multiline\
+Line2
+Unicode: ✓
+Number: 123
+Hex: 0x1A
+Top-level print after main
+[OK] Wrote audio to: /Users/ahmedeldesoky/Downloads/alpa-language-terminal/commands_tts.aiff
+
+--- ai.ocr test.alpa
+[Simulated] OCR cannot process .alpa text as image. If you pass an image, it will extract text.
+
+--- ai.analyze (file content)
+[Simulated Analysis] Sentiment: Neutral
+[Simulated Analysis] Key Topics: Alpa language, printing, functions
+[Simulated Analysis] Summary: /*   test.alpa   مجموعة أمثلة لاختبار أوامر لغة Alpa (طباعة، تعليقات، دوال، سلاسل، أرقام) */  // مثال: طباعة على مستوى الملف print("Top-level print before main")  // دالة ترحيب (لن ينفّذها الـ runner البسيط إلا إذا استدعيت) func greet(name) {   // مثال يبيّن تركيب الدالة — المخرجات الحقيقية هنا مجرد توضيح   // print("Hello, " + name) }  // الدالة الرئيسية مع عدة استدعاءات print func main() {   pri
+
+--- ai.summarize https://example.com/article
+[Simulated] Summary: (short summary of the provided URL content)
+
+--- deploy.ghpages
+[Simulated] Building site, pushing to gh-pages, success at https://your-username.github.io/alpa-lang/
+
+--- deploy.vscode
+[Simulated] Packaged extension: alpa-language-support-1.0.0.vsix.txt (simulated)
+
+--- deploy.vercel
+[Simulated] Deployed to Vercel: https://alpa-lang-demo-aj0fon.vercel.app
+
+--- run /Users/ahmedeldesoky/Downloads/alpa-language-terminal/test.alpa
+Run output:
+Top-level print before main
+Hello, Alpa!
+Single quoted string
+Escaped "quote" inside
+Multiline\
+Line2
+Unicode: ✓
+Number: 123
+Hex: 0x1A
+Top-level print after main

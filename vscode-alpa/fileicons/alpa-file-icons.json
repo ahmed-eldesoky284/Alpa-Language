@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+        "alpa": {
+            "iconPath": "./icons/alpa-icon.svg"
+        }
+    },
+    "fileExtensions": {
+        "alpa": "alpa"
+    },
+    "fileNames": {},
+    "folderNames": {},
+    "languageIds": {}
+}

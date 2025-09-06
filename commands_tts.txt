@@ -1,0 +1,10 @@
+Top-level print before main
+Hello, Alpa!
+Single quoted string
+Escaped "quote" inside
+Multiline\
+Line2
+Unicode: ✓
+Number: 123
+Hex: 0x1A
+Top-level print after main

@@ -1,0 +1,27 @@
+/*
+  test.alpa
+  مجموعة أمثلة لاختبار أوامر لغة Alpa (طباعة، تعليقات، دوال، سلاسل، أرقام)
+*/
+
+// مثال: طباعة على مستوى الملف
+print("Top-level print before main")
+
+// دالة ترحيب (لن ينفّذها الـ runner البسيط إلا إذا استدعيت)
+func greet(name) {
+  // مثال يبيّن تركيب الدالة — المخرجات الحقيقية هنا مجرد توضيح
+  // print("Hello, " + name)
+}
+
+// الدالة الرئيسية مع عدة استدعاءات print
+func main() {
+  print("Hello, Alpa!")
+  print('Single quoted string')
+  print("Escaped \"quote\" inside")
+  print("Multiline\\nLine2")
+  print("Unicode: ✓")
+  print("Number: 123")
+  print("Hex: 0x1A")
+}
+
+// طباعة بعد تعريف الدوال
+print("Top-level print after main")
