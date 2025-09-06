@@ -23,10 +23,15 @@ export const config: AppConfig = {
     holder: 'Ahmed Eldesoky',
   },
   downloads: {
-  // Point to the helper installer scripts or VSIX in the repository to avoid broken binary images
-  windows: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPONAME}/main/installers/install-windows.bat`,
-  macos: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPONAME}/main/vscode-alpa/vscode-alpa-0.0.3.vsix`,
-  linux: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPONAME}/main/installers/install-linux.sh`,
-  vscode_extension_marketplace: 'https://marketplace.visualstudio.com/items?itemName=AlpaLanguage.vscode-alpa',
+  // Use GitHub Releases 'latest' assets for direct downloads. When you publish a release,
+  // upload these files with the exact names below so the links work:
+  // - alpa-installer.exe
+  // - alpa-installer.dmg
+  // - alpa-installer.deb
+  // - vscode-alpa-0.0.3.vsix
+  windows: `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPONAME}/releases/latest/download/alpa-installer.exe`,
+  macos: `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPONAME}/releases/latest/download/alpa-installer.dmg`,
+  linux: `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPONAME}/releases/latest/download/alpa-installer.deb`,
+  vscode_extension_marketplace: `https://marketplace.visualstudio.com/items?itemName=AlpaLanguage.vscode-alpa`,
   },
 };

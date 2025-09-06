@@ -264,7 +264,7 @@ Text to analyze: "${contentToAnalyze}"`;
             { delay: 1500, message: "[OK]: Production build created in './dist' folder." },
             { delay: 500, message: "[GIT]: Committing changes to 'gh-pages' branch..." },
             { delay: 2000, message: '[DEPLOY]: Pushing to GitHub...' },
-            { delay: 1000, message: '[SUCCESS]: Website is now live at: https://your-username.github.io/alpa-lang/' }
+            { delay: 1000, message: '[SUCCESS]: Website is now live at: https://ahmed-eldesoky284.github.io/Alpa-Language/' }
         ];
 
         for (const step of steps) {

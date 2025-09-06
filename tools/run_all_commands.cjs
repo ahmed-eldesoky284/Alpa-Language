@@ -115,7 +115,7 @@ function simulate() {
 
   // deploy.ghpages
   lines.push('--- deploy.ghpages');
-  lines.push('[Simulated] Building site, pushing to gh-pages, success at https://your-username.github.io/alpa-lang/');
+  lines.push('[Simulated] Building site, pushing to gh-pages, success at https://ahmed-eldesoky284.github.io/Alpa-Language/');
   lines.push('');
 
   // deploy.vscode

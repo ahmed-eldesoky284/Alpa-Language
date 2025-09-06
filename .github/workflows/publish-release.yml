@@ -1,0 +1,39 @@
+name: Publish release artifacts
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Build frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build VSIX
+        working-directory: vscode-alpa
+        run: |
+          npm ci --no-audit --no-fund
+          npx vsce package --no-yarn
+
+      - name: Create release (if not exists) and upload assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            vscode-alpa/*.vsix
+            release-artifacts/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
