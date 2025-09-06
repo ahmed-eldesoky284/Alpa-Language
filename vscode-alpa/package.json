@@ -46,11 +46,23 @@
         "title": "Alpa: Insert Example Snippet",
         "category": "Alpa"
       }
+      ,
+      {
+        "command": "alpa.runFile",
+        "title": "Alpa: Run File",
+        "category": "Alpa"
+      }
     ],
     "keybindings": [
       {
         "command": "alpa.insertSnippet",
         "key": "ctrl+alt+i",
+        "when": "editorTextFocus && editorLangId == alpa"
+      }
+      ,
+      {
+        "command": "alpa.runFile",
+        "key": "ctrl+alt+r",
         "when": "editorTextFocus && editorLangId == alpa"
       }
     ]
