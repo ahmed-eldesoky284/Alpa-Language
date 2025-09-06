@@ -1,58 +1,60 @@
 # Alpa Language Terminal
 
-[![Deploy to GitHub Pages](https://github.com/YOUR_USERNAME/YOUR_REPONAME/actions/workflows/deploy.yml/badge.svg)](https://YOUR_USERNAME.github.io/YOUR_REPONAME/)
+<!-- Logo images (uses packaged images included under vscode-alpa/images/) -->
+<p align="center">
+    <img src="vscode-alpa/images/icon.png" alt="Alpa Logo" width="160" />
+    <br />
+    <img src="vscode-alpa/images/screenshot.png" alt="Alpa Screenshot" width="640" />
+</p>
 
-This is a web-based terminal simulator for the Alpa programming language.
+## نبذة عن Alpa (عن اللغة)
 
-> **Note:** Before you begin, please replace `YOUR_USERNAME` and `YOUR_REPONAME` in this README and in the `config.ts` file with your actual GitHub username and repository name.
+Alpa لغة برمجة صغيرة موجّهة للتعليم والتجارب التفاعلية داخل محاكٍ طرفي (terminal simulator). تهدف إلى جعل مفاهيم البرمجة الأساسية سهلة القراءة والكتابة، مع أمثلة بسيطة وسلوك قابل للتوسيع.
 
-## Deployment to GitHub Pages
+- الحالة: مشروع تجريبي (experimental)
+- الهدف: تجربة لغة خفيفة للتعلّم والاختبار
+- الاستخدام المتوقع: تعليم، أمثلة، ومحاكيات تشغيل سريعة
 
-This project is configured for easy, automated deployment to GitHub Pages.
+### عرض أمثل (مثال قصير)
 
-### How it Works
+مثال برنامج بسيط في Alpa يعرض رسالة تحية:
 
-A GitHub Actions workflow located in `.github/workflows/deploy.yml` is set up to automatically deploy your project whenever you push changes to the `main` branch.
+```alpa
+func main() {
+    print("Hello, Alpa!")
+}
+```
 
-### Setup Steps
+يمكنك تعديل هذا المثال وتشغيله في المحاكي داخل واجهة الويب للمشروع.
 
-1.  **Push your code:** Make sure all your latest code is pushed to the `main` branch of your GitHub repository.
+## الموقع الرسمي
 
-2.  **Enable GitHub Pages:**
-    *   Go to your repository on GitHub.
-    *   Click on the **Settings** tab.
-    *   In the left sidebar, click on **Pages**.
-    *   Under "Build and deployment", for the **Source**, select **GitHub Actions**.
+الموقع الرسمي للمشروع (صفحة العرض والتوثيق) متاحة عبر GitHub Pages:
 
-3.  **Wait for Deployment:** The first deployment will trigger automatically after you've configured the Pages source. You can monitor its progress in the **Actions** tab of your repository.
+[https://ahmed-eldesoky284.github.io/Alpa-Language/](https://ahmed-eldesoky284.github.io/Alpa-Language/)
 
-4.  **Access Your Site:** Once the deployment is complete, your website will be live at `https://<YOUR_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>/`.
+> ملاحظة: هذا الرابط مبني على اسم المستخدم واسم المستودع الحاليين. إذا رغبت أن أغيّره إلى رابط آخر (موقع خارجي)، زودني بالرابط الرسمي وسأحدّثه هنا.
 
-### Setting Up Download Links
+## نشر الموقع (GitHub Pages)
 
-The application includes download buttons for Windows, macOS, and Linux. For these to work, you need to:
+هذا المشروع مُعد للنشر الأوتوماتيكي على GitHub Pages باستخدام ملف العمل `.github/workflows/deploy.yml`.
 
-1.  **Update `config.ts`:** 
-    *   Open the `config.ts` file.
-    *   Replace `'YOUR_USERNAME'` in the `GITHUB_USERNAME` constant with your actual GitHub username.
-    *   If your repository is not named `alpa-lang`, replace `'alpa-lang'` in the `GITHUB_REPONAME` constant with its correct name.
+خطوات سريعة:
 
-2.  **Create a Release:** 
-    *   Go to the **Releases** section of your GitHub repository (on the main page, right sidebar) and create a new release (e.g., `v1.0.0`).
+1. تأكّد من دفع التغييرات إلى الفرع `main`.
+2. في إعدادات المستودع على GitHub > Pages، حدّد "GitHub Actions" كمصدر للنشر.
+3. انتظر انتهاء عملية النشر ثم افتح الرابط الموجود أعلاه.
 
-3.  **Upload Assets:** 
-    *   When creating the release, upload your compiled application files. **The file names must match** the ones in the `config.ts` URLs:
-    *   `alpa-installer.exe`
-    *   `alpa-installer.dmg`
-    *   `alpa-installer.deb`
-    *   Publish the release.
+## روابط التنزيل والتوزيع
 
-Alternatively, for quick testing or to include installers directly in the repository, this repo now includes placeholder installer files under `installers/`:
+توجد أزرار تحميل لتثبيت التطبيق على أنظمة Windows وmacOS وLinux؛ يمكنك رفع ملفات التثبيت كـ release assets أو وضعها في مجلد `installers/` داخل المستودع.
 
-* `installers/alpa-installer.exe`
-* `installers/alpa-installer.dmg`
-* `installers/alpa-installer.deb`
+ملف `config.ts` يحدد أسماء الملفات التي يبحث عنها الموقع عند عرض أزرار التحميل—تأكّد من أن أسماء الملفات في الإصدار (Release) تطابق الأسماء المتوقعة (مثل `alpa-installer.exe`).
 
-Replace these placeholders with your real binaries before publishing or deploying the site.
+---
 
-Now, the download buttons on your live website will point directly to these files.
+إذا أردت، أستطيع أيضاً:
+
+- ضغط أي أيقونة كبيرة الحجم لتقليل حجم `.vsix` الخاص بالإضافة.
+- تحديث روابط الموقع في `config.ts` تلقائياً إذا وفّرت اسم مستخدم/مستودع مختلف.
+
