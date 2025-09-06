@@ -1,9 +1,145 @@
 {
   "scopeName": "source.alpa",
+  "name": "Alpa",
   "patterns": [
-    { "match": "\\b(if|else|for|while|return)\\b", "name": "keyword.control.alpa" },
-    { "match": "\\b([0-9]+)\\b", "name": "constant.numeric.alpa" },
-    { "begin": "\"", "end": "\"", "name": "string.quoted.double.alpa" }
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#operators"
+    }
   ],
-  "repository": {}
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "\\/\\*",
+          "end": "\\*\\/",
+          "name": "comment.block.alpa"
+        },
+        {
+          "match": "\\/\\/.*$",
+          "name": "comment.line.double-slash.alpa"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.alpa"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.alpa"
+            }
+          },
+          "name": "string.quoted.double.alpa",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.alpa"
+            }
+          ]
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.alpa",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.alpa"
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b(0x[0-9A-Fa-f]+)\\b",
+          "name": "constant.numeric.hex.alpa"
+        },
+        {
+          "match": "\\b([0-9]+(\\.[0-9]+)?)\\b",
+          "name": "constant.numeric.alpa"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(func|var|let|const|if|else|for|while|return|print|break|continue|import|export|struct|enum|async|await)\\b",
+          "name": "keyword.control.alpa"
+        },
+        {
+          "match": "\\b(true|false|null)\\b",
+          "name": "constant.language.alpa"
+        },
+        {
+          "match": "\\b(int|float|string|bool)\\b",
+          "name": "storage.type.alpa"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "match": "\\bfunc\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()",
+          "captures": {
+            "0": {
+              "name": "keyword.control.alpa"
+            },
+            "1": {
+              "name": "entity.name.function.alpa"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\b)print(?=\\()",
+          "name": "support.function.print.alpa"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b",
+          "name": "variable.other.alpa"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "[+\\-*/%=<>!]+",
+          "name": "keyword.operator.alpa"
+        },
+        {
+          "match": "[(){}\\[\\],;]",
+          "name": "punctuation.separator.alpa"
+        }
+      ]
+    }
+  }
 }

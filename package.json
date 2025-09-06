@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "bin": {
+    "run": "tools/run-alpa.cjs"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
