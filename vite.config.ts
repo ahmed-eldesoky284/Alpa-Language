@@ -7,7 +7,8 @@ export default defineConfig(({ mode }) => {
     // Determine Vite `base` automatically for GitHub Pages.
     // If running in GitHub Actions, GITHUB_REPOSITORY is like "owner/repo".
     // For user/organization pages (repo === `${owner}.github.io`) we use '/'.
-    let base = '/';
+  // Default to relative paths so the site works when deployed to a subpath (GitHub Pages)
+  let base = './';
     const ghRepo = process.env.GITHUB_REPOSITORY || '';
     if (ghRepo) {
       const repoName = ghRepo.split('/')[1] || '';
