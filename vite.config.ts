@@ -18,6 +18,19 @@ export default defineConfig(({ mode }) => {
 
     return {
       base,
+      build: {
+        rollupOptions: {
+          external: [
+            '@mediapipe/face_mesh',
+            '@mediapipe/face_detection',
+            '@mediapipe/drawing_utils',
+            '@mediapipe/camera_utils',
+            '@mediapipe/control_utils',
+            '@mediapipe/solution_base',
+            '@mediapipe/blazeface'
+          ]
+        }
+      },
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
